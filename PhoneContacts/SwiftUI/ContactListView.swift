@@ -9,28 +9,16 @@ import SwiftUI
 
 struct ContactListView: View {
     
-    struct Contact: Identifiable, Hashable {
-        let name: String
-        let phone: String
-        
-        let id = UUID()
+    private var contacts: [ContactModel] = []
+    
+    init(contacts: [ContactModel]) {
+        self.contacts = contacts
     }
-
-    private var contacts = [
-        Contact(name: "Test", phone: "Phone"),
-        Contact(name: "Test", phone: "Phone"),
-        Contact(name: "Test", phone: "Phone"),
-        Contact(name: "Test", phone: "Phone"),
-        Contact(name: "Test", phone: "Phone"),
-        Contact(name: "Test", phone: "Phone"),
-        Contact(name: "Test", phone: "Phone"),
-        Contact(name: "Test", phone: "Phone")
-    ]
     
     var body: some View {
         List(contacts) { contact in
             VStack(alignment: .leading) {
-                Text(contact.name)
+                Text("\(contact.name) \(contact.surname)")
                 Text(contact.phone)
             }
         }
@@ -39,6 +27,6 @@ struct ContactListView: View {
 
 struct ContactListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactListView()
+        ContactListView(contacts: [])
     }
 }
