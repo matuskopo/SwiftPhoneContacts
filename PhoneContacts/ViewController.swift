@@ -6,14 +6,38 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var sgmUI: UISegmentedControl!
+    @IBOutlet weak var sgmDataSource: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        title = "Phone Contacts"
     }
 
-
+    @IBAction func doStart(_ sender: Any) {
+        if sgmDataSource.selectedSegmentIndex == 0 {
+            Resources.sharedInstance.dataManager = JSONContactsManager()
+        } else if sgmDataSource.selectedSegmentIndex == 1 {
+            Resources.sharedInstance.dataManager = CoreDataContactsManager()
+        } else {
+            Resources.sharedInstance.dataManager = FirebaseContactsManager()
+        }
+        
+        if sgmUI.selectedSegmentIndex == 0 {
+            performSegue(withIdentifier: "segueShowUIKit", sender: nil)
+        } else {
+            performSegue(withIdentifier: "segueShowSwiftUI", sender: nil)
+        }
+    }
+    
+    
+    @IBSegueAction func loadSwiftUIView(_ coder: NSCoder) -> UIViewController? {
+        return UIHostingController(coder: coder, rootView: ContactListView())
+    }
 }
 

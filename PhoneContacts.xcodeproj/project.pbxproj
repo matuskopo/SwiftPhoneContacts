@@ -14,6 +14,14 @@
 		6B53A3732AE8EF1400FBCEA7 /* PhoneContacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B53A3712AE8EF1400FBCEA7 /* PhoneContacts.xcdatamodeld */; };
 		6B53A3752AE8EF1400FBCEA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B53A3742AE8EF1400FBCEA7 /* Assets.xcassets */; };
 		6B53A3782AE8EF1400FBCEA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B53A3762AE8EF1400FBCEA7 /* LaunchScreen.storyboard */; };
+		6B53A3802AE8F25600FBCEA7 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53A37F2AE8F25600FBCEA7 /* ContactsTableViewController.swift */; };
+		6B53A3872AE8F56C00FBCEA7 /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53A3862AE8F56C00FBCEA7 /* ContactListView.swift */; };
+		6B53A3892AE8FD4E00FBCEA7 /* ContactsManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53A3882AE8FD4E00FBCEA7 /* ContactsManagerProtocol.swift */; };
+		6B53A38B2AE8FD9200FBCEA7 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53A38A2AE8FD9200FBCEA7 /* ContactModel.swift */; };
+		6B53A38D2AE8FE1300FBCEA7 /* JSONContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53A38C2AE8FE1300FBCEA7 /* JSONContactsManager.swift */; };
+		6B53A38F2AE8FEDA00FBCEA7 /* CoreDataContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53A38E2AE8FEDA00FBCEA7 /* CoreDataContactsManager.swift */; };
+		6B53A3912AE8FEE300FBCEA7 /* FirebaseContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53A3902AE8FEE300FBCEA7 /* FirebaseContactsManager.swift */; };
+		6B53A3932AE901C500FBCEA7 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53A3922AE901C500FBCEA7 /* Resources.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,14 @@
 		6B53A3742AE8EF1400FBCEA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B53A3772AE8EF1400FBCEA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B53A3792AE8EF1400FBCEA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B53A37F2AE8F25600FBCEA7 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		6B53A3862AE8F56C00FBCEA7 /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
+		6B53A3882AE8FD4E00FBCEA7 /* ContactsManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManagerProtocol.swift; sourceTree = "<group>"; };
+		6B53A38A2AE8FD9200FBCEA7 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		6B53A38C2AE8FE1300FBCEA7 /* JSONContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONContactsManager.swift; sourceTree = "<group>"; };
+		6B53A38E2AE8FEDA00FBCEA7 /* CoreDataContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataContactsManager.swift; sourceTree = "<group>"; };
+		6B53A3902AE8FEE300FBCEA7 /* FirebaseContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseContactsManager.swift; sourceTree = "<group>"; };
+		6B53A3922AE901C500FBCEA7 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,9 @@
 		6B53A3672AE8EF1400FBCEA7 /* PhoneContacts */ = {
 			isa = PBXGroup;
 			children = (
+				6B53A3852AE8F2AC00FBCEA7 /* Data */,
+				6B53A3842AE8F2A300FBCEA7 /* UIKit */,
+				6B53A3832AE8F29900FBCEA7 /* SwiftUI */,
 				6B53A3682AE8EF1400FBCEA7 /* AppDelegate.swift */,
 				6B53A36A2AE8EF1400FBCEA7 /* SceneDelegate.swift */,
 				6B53A36C2AE8EF1400FBCEA7 /* ViewController.swift */,
@@ -66,8 +85,37 @@
 				6B53A3762AE8EF1400FBCEA7 /* LaunchScreen.storyboard */,
 				6B53A3792AE8EF1400FBCEA7 /* Info.plist */,
 				6B53A3712AE8EF1400FBCEA7 /* PhoneContacts.xcdatamodeld */,
+				6B53A3922AE901C500FBCEA7 /* Resources.swift */,
 			);
 			path = PhoneContacts;
+			sourceTree = "<group>";
+		};
+		6B53A3832AE8F29900FBCEA7 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				6B53A3862AE8F56C00FBCEA7 /* ContactListView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		6B53A3842AE8F2A300FBCEA7 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				6B53A37F2AE8F25600FBCEA7 /* ContactsTableViewController.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		6B53A3852AE8F2AC00FBCEA7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6B53A3882AE8FD4E00FBCEA7 /* ContactsManagerProtocol.swift */,
+				6B53A38A2AE8FD9200FBCEA7 /* ContactModel.swift */,
+				6B53A38C2AE8FE1300FBCEA7 /* JSONContactsManager.swift */,
+				6B53A38E2AE8FEDA00FBCEA7 /* CoreDataContactsManager.swift */,
+				6B53A3902AE8FEE300FBCEA7 /* FirebaseContactsManager.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +189,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B53A3912AE8FEE300FBCEA7 /* FirebaseContactsManager.swift in Sources */,
+				6B53A3872AE8F56C00FBCEA7 /* ContactListView.swift in Sources */,
 				6B53A36D2AE8EF1400FBCEA7 /* ViewController.swift in Sources */,
+				6B53A38B2AE8FD9200FBCEA7 /* ContactModel.swift in Sources */,
 				6B53A3692AE8EF1400FBCEA7 /* AppDelegate.swift in Sources */,
+				6B53A3892AE8FD4E00FBCEA7 /* ContactsManagerProtocol.swift in Sources */,
+				6B53A3802AE8F25600FBCEA7 /* ContactsTableViewController.swift in Sources */,
 				6B53A36B2AE8EF1400FBCEA7 /* SceneDelegate.swift in Sources */,
+				6B53A38D2AE8FE1300FBCEA7 /* JSONContactsManager.swift in Sources */,
+				6B53A3932AE901C500FBCEA7 /* Resources.swift in Sources */,
 				6B53A3732AE8EF1400FBCEA7 /* PhoneContacts.xcdatamodeld in Sources */,
+				6B53A38F2AE8FEDA00FBCEA7 /* CoreDataContactsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
