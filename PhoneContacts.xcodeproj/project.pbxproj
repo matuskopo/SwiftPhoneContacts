@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B308B722AEA628B004C366F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B308B712AEA628B004C366F /* DetailViewController.swift */; };
 		6B53A3692AE8EF1400FBCEA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53A3682AE8EF1400FBCEA7 /* AppDelegate.swift */; };
 		6B53A36B2AE8EF1400FBCEA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53A36A2AE8EF1400FBCEA7 /* SceneDelegate.swift */; };
 		6B53A36D2AE8EF1400FBCEA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53A36C2AE8EF1400FBCEA7 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B308B712AEA628B004C366F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6B53A3652AE8EF1400FBCEA7 /* PhoneContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B53A3682AE8EF1400FBCEA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B53A36A2AE8EF1400FBCEA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				6B53A37F2AE8F25600FBCEA7 /* ContactsTableViewController.swift */,
+				6B308B712AEA628B004C366F /* DetailViewController.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B308B722AEA628B004C366F /* DetailViewController.swift in Sources */,
 				6B53A3912AE8FEE300FBCEA7 /* FirebaseContactsManager.swift in Sources */,
 				6B53A3872AE8F56C00FBCEA7 /* ContactListView.swift in Sources */,
 				6B53A36D2AE8EF1400FBCEA7 /* ViewController.swift in Sources */,
