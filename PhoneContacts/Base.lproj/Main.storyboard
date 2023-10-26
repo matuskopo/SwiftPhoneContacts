@@ -153,21 +153,71 @@
             </objects>
             <point key="canvasLocation" x="1442" y="-518"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="jdt-mv-cEN">
             <objects>
-                <viewController id="5qI-JH-Dd3" sceneMemberID="viewController">
+                <viewController id="5qI-JH-Dd3" customClass="DetailViewController" customModule="PhoneContacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zc9-mj-Bv5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dSq-Hd-Ufd">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Abp-yH-C9z" userLabel="UpperView">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="310.33333333333331"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PqQ-Fp-jRn">
+                                        <rect key="frame" x="0.0" y="310.33333333333331" width="393" height="84.666666666666686"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcn-MZ-gZq" userLabel="NameLbl">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hax-8u-Tq9" userLabel="PhoneLbl">
+                                                <rect key="frame" x="0.0" y="30" width="393" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ZZ-qc-neY" userLabel="Delete">
+                                                <rect key="frame" x="0.0" y="50.333333333333371" width="393" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Delejte"/>
+                                                <connections>
+                                                    <action selector="deleteContact:" destination="5qI-JH-Dd3" eventType="touchUpInside" id="s5W-g3-dIO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L6V-ut-0ne" userLabel="LowerView">
+                                        <rect key="frame" x="0.0" y="395" width="393" height="320"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qik-2U-iqU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qik-2U-iqU" firstAttribute="bottom" secondItem="dSq-Hd-Ufd" secondAttribute="bottom" id="1zN-08-x5x"/>
+                            <constraint firstItem="dSq-Hd-Ufd" firstAttribute="top" secondItem="qik-2U-iqU" secondAttribute="top" id="Ll1-Fu-xbf"/>
+                            <constraint firstItem="qik-2U-iqU" firstAttribute="trailing" secondItem="dSq-Hd-Ufd" secondAttribute="trailing" id="ZAU-in-TQW"/>
+                            <constraint firstItem="dSq-Hd-Ufd" firstAttribute="leading" secondItem="qik-2U-iqU" secondAttribute="leading" id="qHj-DJ-6J0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rB1-IK-TZC"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="bcn-MZ-gZq" id="Mu9-5W-Xgt"/>
+                        <outlet property="phoneLabel" destination="hax-8u-Tq9" id="gbx-LG-rlm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMi-1n-mo3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2387" y="-518"/>
+            <point key="canvasLocation" x="2385.4961832061067" y="-518.30985915492965"/>
         </scene>
     </scenes>
     <resources>

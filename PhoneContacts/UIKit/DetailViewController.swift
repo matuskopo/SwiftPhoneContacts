@@ -9,13 +9,29 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
-
+    @IBAction func deleteContact(_ sender: Any) {
+        let alert = UIAlertController(
+            title: "Really?",
+            message: "You cant go back!",
+            preferredStyle: .alert)
+        
+        let action = UIAlertAction(
+            title: "Delete",
+            style: .destructive)
+        
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
