@@ -12,10 +12,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     
+    var selectedContact: ContactModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        if let contactDetail = selectedContact {
+            nameLabel.text = "\(contactDetail.name) \(contactDetail.surname)".trimmingCharacters(in: .whitespacesAndNewlines)
+            phoneLabel.text = String(contactDetail.phone)
+        }
     }
     
     @IBAction func deleteContact(_ sender: Any) {
