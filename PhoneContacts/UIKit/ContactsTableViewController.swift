@@ -7,14 +7,16 @@
 
 import UIKit
 
-class ContactsTableViewController: UITableViewController {
+protocol RefreshDelegate: AnyObject {
+    func refreshData()
+}
+
+class ContactsTableViewController: UITableViewController, RefreshDelegate {
     
     var contacts: [ContactModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        contacts = Resources.sharedInstance.dataManager.load()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -22,7 +24,19 @@ class ContactsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        refreshData()
+    }
+    
+    func refreshData() {
+        contacts = Resources.sharedInstance.dataManager.load()
+        
+        self.tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,6 +65,8 @@ class ContactsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let detailVC = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
             detailVC.selectedContact = contacts[indexPath.row]
+            
+            detailVC.refreshDelegate = self
             navigationController?.pushViewController(detailVC, animated: true)
         }
     }

@@ -15,9 +15,17 @@ class DetailViewController: UIViewController {
     var selectedContact: ContactModel?
     let contactManager = Resources.sharedInstance.dataManager
     
+    weak var refreshDelegate: RefreshDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        selectedContact = contactManager.load().filter({ $0.id == selectedContact?.id }).first
+        
         if let contactDetail = selectedContact {
             nameLabel.text = "\(contactDetail.name) \(contactDetail.surname)".trimmingCharacters(in: .whitespacesAndNewlines)
             phoneLabel.text = String(contactDetail.phone)
@@ -48,6 +56,7 @@ class DetailViewController: UIViewController {
                 if let contact = self.selectedContact {
                     self.contactManager.delete(contact)
                     
+                    self.refreshDelegate?.refreshData()
                     self.navigationController?.popViewController(animated: true)
                 }})
         
