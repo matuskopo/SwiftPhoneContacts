@@ -10,12 +10,17 @@ import Foundation
 class JSONContactsManager: ContactsManager {
     
     var contacts: [ContactModel] = []
+    var loaded = false
     
     func load() -> [ContactModel] {
-        if let contacts = loadJson() {
-            self.contacts = contacts
-        } else {
-            saveToJson([ContactModel(name: "JSON", surname: "Test", phone: "Phone")])
+        if !loaded {
+            if let contacts = loadJson() {
+                self.contacts = contacts
+            } else {
+                saveToJson([ContactModel(name: "JSON", surname: "Test", phone: "Phone")])
+            }
+            
+            loaded = true
         }
         
         return contacts
@@ -24,6 +29,8 @@ class JSONContactsManager: ContactsManager {
     func add(_ contact: ContactModel) {
         contacts.append(contact)
         saveToJson(contacts)
+        
+        loaded = false
     }
     
     func edit(_ contact: ContactModel) {
@@ -31,6 +38,8 @@ class JSONContactsManager: ContactsManager {
             contacts[index] = contact
         }
         saveToJson(contacts)
+        
+        loaded = false
     }
     
     func delete(_ contact: ContactModel) {
@@ -38,6 +47,8 @@ class JSONContactsManager: ContactsManager {
             contacts.remove(at: index)
         }
         saveToJson(contacts)
+        
+        loaded = false
     }
     
     // MARK: - private methods
