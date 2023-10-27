@@ -52,6 +52,7 @@ class DetailViewController: UIViewController {
                 }})
         
         alert.addAction(action)
+        alert.addAction(UIAlertAction(title: "Nope!", style: .cancel))
         present(alert, animated: true)
     }
     
