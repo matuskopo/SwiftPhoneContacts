@@ -13,6 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     
     var selectedContact: ContactModel?
+    let contactManager = JSONContactsManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,13 @@ class DetailViewController: UIViewController {
         
         let action = UIAlertAction(
             title: "Delete",
-            style: .destructive)
+            style: .destructive,
+            handler: { _ in
+                if let contact = self.selectedContact {
+                    self.contactManager.delete(contact)
+                    
+                    self.navigationController?.popViewController(animated: true)
+                }})
         
         alert.addAction(action)
         present(alert, animated: true)

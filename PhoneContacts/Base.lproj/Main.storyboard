@@ -144,11 +144,94 @@
                             <outlet property="delegate" destination="G6u-h8-qtF" id="LHB-6I-0uG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="3zi-xH-rki"/>
+                    <navigationItem key="navigationItem" id="3zi-xH-rki">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aUM-D7-QXA">
+                            <connections>
+                                <segue destination="kG1-tG-WWC" kind="show" id="qtc-9x-Kmx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Le-6V-DxR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1442" y="-518"/>
+        </scene>
+        <!--Add Contact-->
+        <scene sceneID="h8w-S1-8Gq">
+            <objects>
+                <viewController storyboardIdentifier="Add" id="kG1-tG-WWC" customClass="AddContactViewController" customModule="PhoneContacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eva-O5-MX5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kmM-rA-2bC">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIi-bb-vEJ" userLabel="UpperView">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="289.33333333333331"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2ps-ae-xcN">
+                                        <rect key="frame" x="0.0" y="289.33333333333331" width="393" height="136.33333333333331"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mYu-N7-ZZF" userLabel="Name Text Field">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAi-W6-Jjt" userLabel="Surname Text Field">
+                                                <rect key="frame" x="0.0" y="34" width="393" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="surnameTextField:" destination="ZUa-sW-xe6" eventType="editingDidEnd" id="cAv-8Y-lih"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YmK-Zl-Ycn" userLabel="Phone Text Field">
+                                                <rect key="frame" x="0.0" y="68" width="393" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruu-dx-yTM">
+                                                <rect key="frame" x="0.0" y="102" width="393" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Add"/>
+                                                <connections>
+                                                    <action selector="addContact:" destination="kG1-tG-WWC" eventType="touchUpInside" id="hC7-BR-Yk1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GK3-Gy-85f" userLabel="LowerView">
+                                        <rect key="frame" x="0.0" y="425.66666666666663" width="393" height="289.33333333333337"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cIi-bb-vEJ" firstAttribute="height" secondItem="GK3-Gy-85f" secondAttribute="height" id="yeD-NC-17H"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tDq-vR-YuO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kmM-rA-2bC" firstAttribute="leading" secondItem="tDq-vR-YuO" secondAttribute="leading" id="8UY-UE-CTr"/>
+                            <constraint firstItem="tDq-vR-YuO" firstAttribute="bottom" secondItem="kmM-rA-2bC" secondAttribute="bottom" id="hQL-if-7u1"/>
+                            <constraint firstItem="tDq-vR-YuO" firstAttribute="trailing" secondItem="kmM-rA-2bC" secondAttribute="trailing" id="mYf-tZ-dNi"/>
+                            <constraint firstItem="kmM-rA-2bC" firstAttribute="top" secondItem="tDq-vR-YuO" secondAttribute="top" id="qU9-fu-IkM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Contact" id="r2w-aw-iaM"/>
+                    <connections>
+                        <outlet property="nameField" destination="mYu-N7-ZZF" id="Z18-b0-3wl"/>
+                        <outlet property="phoneField" destination="YmK-Zl-Ycn" id="JxY-7T-q2v"/>
+                        <outlet property="surnameField" destination="HAi-W6-Jjt" id="68a-RD-1ZG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MLD-I5-eUG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ZUa-sW-xe6" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2385" y="-1221"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="jdt-mv-cEN">
