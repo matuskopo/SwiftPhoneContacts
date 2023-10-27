@@ -24,6 +24,17 @@ class DetailViewController: UIViewController {
         }
     }
     
+    @IBAction func editContact(_ sender: Any) {
+        if let editVC = storyboard?.instantiateViewController(withIdentifier: "Edit") as? EditContactController {
+            editVC.name = selectedContact?.name
+            editVC.surname = selectedContact?.surname
+            editVC.phone = selectedContact?.phone
+            editVC.id = selectedContact?.id
+            
+            navigationController?.pushViewController(editVC, animated: true)
+        }
+    }
+    
     @IBAction func deleteContact(_ sender: Any) {
         let alert = UIAlertController(
             title: "Really?",
