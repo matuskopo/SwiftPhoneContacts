@@ -62,12 +62,12 @@ class JSONContactsManager: ContactsManager {
     private func saveToJson(_ data: [ContactModel]) {
         if let jsonData = try? JSONEncoder().encode(data),
             let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            let pathWithFileName = documentDirectory.appendingPathComponent("contacts.json")
-            do {
-                try jsonData.write(to: pathWithFileName)
-            } catch {
-                print(error)
+                let pathWithFileName = documentDirectory.appendingPathComponent("contacts.json")
+                do {
+                    try jsonData.write(to: pathWithFileName)
+                } catch {
+                    print(error)
+                }
             }
-        }
     }
 }

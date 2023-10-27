@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     
     var selectedContact: ContactModel?
-    let contactManager = JSONContactsManager()
+    let contactManager = Resources.sharedInstance.dataManager
     
     override func viewDidLoad() {
         super.viewDidLoad()

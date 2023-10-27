@@ -13,12 +13,10 @@ class AddContactViewController: UIViewController {
     @IBOutlet weak var surnameField: UITextField!
     @IBOutlet weak var phoneField: UITextField!
     
-    var contactManager = JSONContactsManager()
+    var contactManager = Resources.sharedInstance.dataManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     @IBAction func addContact(_ sender: Any) {
