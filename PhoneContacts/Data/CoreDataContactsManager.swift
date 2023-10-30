@@ -19,8 +19,7 @@ class CoreDataContactsManager: ContactsManager {
             if let contacts = loadCoreData() {
                 self.contacts = contacts
             } else {
-                contacts[0] = ContactModel(name: "CoreData", surname: "Test", phone: "Phone")
-                //TODO - save to core data
+                saveCoreData([ContactModel(name: "CoreData", surname: "Test", phone: "Phone")])
             }
             
             loaded = true
@@ -31,6 +30,7 @@ class CoreDataContactsManager: ContactsManager {
     
     func add(_ contact: ContactModel) {
         contacts.append(contact)
+        saveCoreData(contacts)
         
         loaded = false
     }
@@ -39,6 +39,7 @@ class CoreDataContactsManager: ContactsManager {
         if let index = contacts.firstIndex(where: { $0.id == contact.id }) {
             contacts[index] = contact
         }
+        saveCoreData(contacts)
         
         loaded = false
     }
@@ -47,12 +48,15 @@ class CoreDataContactsManager: ContactsManager {
         if let index = contacts.firstIndex(where: { $0.id == contact.id }) {
             contacts.remove(at: index)
         }
+        saveCoreData(contacts)
         
         loaded = false
     }
     
+    // MARK: - private methods
+    
     private func loadCoreData() -> [ContactModel]? {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return contacts }
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Contacts")
         
@@ -76,7 +80,23 @@ class CoreDataContactsManager: ContactsManager {
     }
     
     private func saveCoreData(_ data: [ContactModel]) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        guard let contactsEntity = NSEntityDescription.entity(forEntityName: "Contacts", in: managedContext) else { return }
         
+        for contact in data {
+            let contacts = NSManagedObject(entity: contactsEntity, insertInto: managedContext)
+            
+            contacts.setValue(contact.name, forKey: "name")
+            contacts.setValue(contact.surname, forKey: "surname")
+            contacts.setValue(contact.phone, forKey: "phoneNumber")
+        }
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
     }
     
 }
