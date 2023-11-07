@@ -15,6 +15,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var initialsLabel: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
         
+    @IBOutlet weak var messageButton: UIButton!
+    @IBOutlet weak var phoneNumberStack: UIStackView!
+    
     var selectedContact: ContactModel?
     let contactManager = Resources.sharedInstance.dataManager
     

@@ -313,10 +313,10 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zsg-2K-flu" userLabel="Buttons Stack">
-                                        <rect key="frame" x="0.0" y="180" width="355" height="48.5"/>
+                                        <rect key="frame" x="0.0" y="180" width="355" height="88"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQ2-55-8Me" userLabel="Message Button">
-                                                <rect key="frame" x="0.0" y="0.0" width="83" height="48.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="83" height="88"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="message">
                                                     <imageReference key="image" image="message.fill" catalog="system" symbolScale="default"/>
@@ -330,7 +330,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkU-lh-twG" userLabel="Mobile Button">
-                                                <rect key="frame" x="91" y="0.0" width="82.5" height="48.5"/>
+                                                <rect key="frame" x="91" y="0.0" width="82.5" height="88"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="mobile">
                                                     <imageReference key="image" image="phone.fill" catalog="system" symbolScale="default"/>
@@ -344,7 +344,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoA-Lf-WX9" userLabel="Video Button">
-                                                <rect key="frame" x="181.5" y="0.0" width="83" height="48.5"/>
+                                                <rect key="frame" x="181.5" y="0.0" width="83" height="88"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="video">
                                                     <imageReference key="image" image="video.fill" catalog="system" symbolScale="default"/>
@@ -358,7 +358,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qg4-xz-wXU" userLabel="Mail Button">
-                                                <rect key="frame" x="272.5" y="0.0" width="82.5" height="48.5"/>
+                                                <rect key="frame" x="272.5" y="0.0" width="82.5" height="88"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="mail">
                                                     <imageReference key="image" image="envelope.fill" catalog="system" symbolScale="default"/>
@@ -374,11 +374,51 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edI-Gn-qOX" userLabel="Margin View">
+                                        <rect key="frame" x="0.0" y="268" width="355" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="0ch-KC-2mP"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YW3-7W-1Uc" userLabel="Phone Number Stack">
+                                        <rect key="frame" x="0.0" y="288" width="355" height="88"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="h1C-TC-Lfx">
+                                                <rect key="frame" x="0.0" y="0.0" width="41.5" height="88"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mu-Uy-sra">
+                                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="24"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zC-eZ-vD1">
+                                                        <rect key="frame" x="0.0" y="24" width="41.5" height="64"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGl-3N-JBF" userLabel="Right View">
+                                                <rect key="frame" x="41.5" y="0.0" width="313.5" height="88"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYa-aH-eQX" userLabel="Margin View">
+                                        <rect key="frame" x="0.0" y="376" width="355" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="GIx-j2-w0J"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wnN-5j-4Sz" userLabel="Lower View">
-                                        <rect key="frame" x="0.0" y="228.5" width="355" height="265.5"/>
+                                        <rect key="frame" x="0.0" y="396" width="355" height="216"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ZZ-qc-neY" userLabel="Delete">
-                                        <rect key="frame" x="0.0" y="494" width="355" height="153"/>
+                                        <rect key="frame" x="0.0" y="612" width="355" height="35"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Delejte">
                                             <backgroundConfiguration key="background">
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -389,6 +429,11 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="YW3-7W-1Uc" firstAttribute="height" secondItem="Zsg-2K-flu" secondAttribute="height" id="SrD-z7-9Hc"/>
+                                    <constraint firstItem="YW3-7W-1Uc" firstAttribute="width" secondItem="Zsg-2K-flu" secondAttribute="width" id="Svv-Dq-uWO"/>
+                                    <constraint firstItem="YW3-7W-1Uc" firstAttribute="leading" secondItem="Zsg-2K-flu" secondAttribute="leading" id="rH4-cK-6tn"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qik-2U-iqU"/>
@@ -409,7 +454,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="initialsLabel" destination="ZFV-Da-F6L" id="maJ-4A-7Wq"/>
+                        <outlet property="messageButton" destination="mQ2-55-8Me" id="5s9-5J-eaI"/>
                         <outlet property="nameLabel" destination="bcn-MZ-gZq" id="Mu9-5W-Xgt"/>
+                        <outlet property="phoneLabel" destination="9zC-eZ-vD1" id="rhj-Un-Yr1"/>
+                        <outlet property="phoneNumberStack" destination="YW3-7W-1Uc" id="HsD-Lb-pLP"/>
                         <outlet property="profilePicture" destination="M0r-gu-yJC" id="wyn-SL-sJ0"/>
                     </connections>
                 </viewController>
