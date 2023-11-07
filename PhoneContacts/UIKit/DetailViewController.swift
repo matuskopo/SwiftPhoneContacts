@@ -11,6 +11,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var profilePicture: UIImageView!
     
     var selectedContact: ContactModel?
     let contactManager = Resources.sharedInstance.dataManager
@@ -19,6 +20,9 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profilePicture.layer.cornerRadius = profilePicture.frame.size.width / 2
+        profilePicture.clipsToBounds = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
