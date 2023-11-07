@@ -15,7 +15,7 @@ class CoreDataContactsManager: ContactsManager {
     
     let appDelegate = UIApplication.shared.delegate as? AppDelegate
     
-    func load() -> [ContactModel] {
+    func load(completion: @escaping (_ returnedArray: [ContactModel]) -> Void) {
         if !loaded {
             if let contacts = loadCoreData() {
                 self.contacts = contacts
@@ -26,7 +26,7 @@ class CoreDataContactsManager: ContactsManager {
             loaded = true
         }
         
-        return contacts
+        completion(contacts)
     }
     
     func add(_ contact: ContactModel) {

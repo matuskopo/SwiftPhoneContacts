@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContactListView: View {
     
-    private var contacts: [ContactModel] = []
+    @State private var contacts: [ContactModel] = []
     
     init(contacts: [ContactModel]) {
         self.contacts = contacts
@@ -20,6 +20,11 @@ struct ContactListView: View {
             VStack(alignment: .leading) {
                 Text("\(contact.name) \(contact.surname)")
                 Text(contact.phone)
+            }
+            .onAppear {
+                Resources.sharedInstance.dataManager.load { returnedArray in
+                    self.contacts = returnedArray
+                }
             }
         }
     }

@@ -24,11 +24,13 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        selectedContact = contactManager.load().filter({ $0.id == selectedContact?.id }).first
-        
-        if let contactDetail = selectedContact {
-            nameLabel.text = "\(contactDetail.name) \(contactDetail.surname)".trimmingCharacters(in: .whitespacesAndNewlines)
-            phoneLabel.text = String(contactDetail.phone)
+        contactManager.load { [weak self] returnedArray in
+            self?.selectedContact = returnedArray.filter({ $0.id == self?.selectedContact?.id }).first
+            
+            if let contactDetail = self?.selectedContact {
+                self?.nameLabel.text = "\(contactDetail.name) \(contactDetail.surname)".trimmingCharacters(in: .whitespacesAndNewlines)
+                self?.phoneLabel.text = String(contactDetail.phone)
+            }
         }
     }
     

@@ -12,7 +12,7 @@ class JSONContactsManager: ContactsManager {
     var contacts: [ContactModel] = []
     var loaded = false
     
-    func load() -> [ContactModel] {
+    func load(completion: @escaping (_ returnedArray: [ContactModel]) -> Void) {
         if !loaded {
             if let contacts = loadJson() {
                 self.contacts = contacts
@@ -23,7 +23,7 @@ class JSONContactsManager: ContactsManager {
             loaded = true
         }
         
-        return contacts
+        completion(contacts)
     }
     
     func add(_ contact: ContactModel) {

@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     
     @IBSegueAction func loadSwiftUIView(_ coder: NSCoder) -> UIViewController? {
-        return UIHostingController(coder: coder, rootView: ContactListView(contacts: Resources.sharedInstance.dataManager.load()))
+        return UIHostingController(coder: coder, rootView: ContactListView(contacts: []))
     }
 }
 

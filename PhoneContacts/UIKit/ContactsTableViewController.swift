@@ -32,10 +32,11 @@ class ContactsTableViewController: UITableViewController, RefreshDelegate {
     }
     
     func refreshData() {
-        contacts = Resources.sharedInstance.dataManager.load()
-        contacts.sort{$0.name < $1.name}
-        
-        self.tableView.reloadData()
+        Resources.sharedInstance.dataManager.load(completion: { returnedArray in
+            self.contacts = returnedArray
+            self.contacts.sort{$0.name < $1.name}
+            self.tableView.reloadData()
+        })
     }
     
     // MARK: - Table view data source

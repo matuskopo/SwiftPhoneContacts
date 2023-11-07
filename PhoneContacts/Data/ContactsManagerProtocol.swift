@@ -9,7 +9,7 @@ import Foundation
 
 protocol ContactsManager {
     
-    func load() -> [ContactModel]
+    func load(completion: @escaping (_ returnedArray: [ContactModel]) -> Void)
     func add(_ contact: ContactModel)
     func edit(_ contact: ContactModel)
     func delete(_ contact: ContactModel)

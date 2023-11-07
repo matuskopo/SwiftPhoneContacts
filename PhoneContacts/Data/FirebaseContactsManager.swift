@@ -15,55 +15,16 @@ class FirebaseContactsManager: ContactsManager {
     var contacts: [ContactModel] = []
     var loaded = false
     
-    func load() -> [ContactModel] {
+    func load(completion: @escaping (_ returnedArray: [ContactModel]) -> Void) {
         if !loaded {
-//            if let contacts = loadFirebase() {
-//                self.contacts = contacts
-//            } else {
-//                saveToFirebase([ContactModel(name: "CoreData", surname: "Test", phone: "Phone")])
-//            }
-            
-//            database.child("Contact").getData(completion: { error, snapshot in
-//                guard error == nil else {
-//                    print(error!.localizedDescription)
-//                    return
-//                }
-//                
-//                self.contacts.removeAll()
-//                
-//                if ((snapshot?.exists()) != nil) {
-//                    for child in snapshot!.children {
-//                        let childSnap = child as? DataSnapshot
-//                        let dict = childSnap?.value as? [String: String]
-//                        let id = String((child as AnyObject).key)
-//                        
-//                        var contact = ContactModel(name: "", surname: "", phone: "", id: UUID(uuidString: id) ?? UUID())
-//                        contact.name = dict?["name"] ?? ""
-//                        contact.surname = dict?["surname"] ?? ""
-//                        contact.phone = dict?["phoneNumber"] ?? ""
-//                        
-//                        self.contacts.append(contact)
-//                    }
-//                }
-//                
-//            })
-            
-            let semaphore = DispatchSemaphore(value: 1)
-            
-            loadFirebase(completion: { array in
-                self.contacts = array
-                semaphore.signal()
-            })
-            
-//            if self.contacts.isEmpty {
-//                saveToFirebase([ContactModel(name: "CoreData", surname: "Test", phone: "Phone")])
-//            }
-            
-            semaphore.wait()
-            loaded = true
+            loadFirebase { returnedArray in
+                self.loaded = true
+                self.contacts = returnedArray
+                completion(self.contacts)
+            }
+        } else {
+            completion(contacts)
         }
-        
-        return contacts
     }
     
     func add(_ contact: ContactModel) {
@@ -94,54 +55,36 @@ class FirebaseContactsManager: ContactsManager {
     // MARK: - private methods
     
     private func loadFirebase(completion: @escaping (_ returnedArray: [ContactModel]) -> Void) {
-        
-        var returnedArray: [ContactModel] = []
-        
-        database.child("Contact").observeSingleEvent(of: .value, with: { snapshot in
-            for child in snapshot.children {
-                let childSnap = child as? DataSnapshot
-                let dict = childSnap?.value as? [String: String]
-                let id = String((child as AnyObject).key)
-                
-                var contact = ContactModel(name: "", surname: "", phone: "", id: UUID(uuidString: id) ?? UUID())
-                contact.name = dict?["name"] ?? ""
-                contact.surname = dict?["surname"] ?? ""
-                contact.phone = dict?["phoneNumber"] ?? ""
-                
-                returnedArray.append(contact)
+       
+        database.child("Contact").getData(completion: { error, snapshot in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
             }
             
-            completion(returnedArray)
+            self.contacts.removeAll()
+            
+            if ((snapshot?.exists()) != nil) {
+                for child in snapshot!.children {
+                    let childSnap = child as? DataSnapshot
+                    let dict = childSnap?.value as? [String: String]
+                    let id = String((child as AnyObject).key)
+                    
+                    var contact = ContactModel(name: "", surname: "", phone: "", id: UUID(uuidString: id) ?? UUID())
+                    contact.name = dict?["name"] ?? ""
+                    contact.surname = dict?["surname"] ?? ""
+                    contact.phone = dict?["phoneNumber"] ?? ""
+                    
+                    self.contacts.append(contact)
+                }
+            }
+            
+            completion(self.contacts)
         })
-        
-//        database.child("Contact").getData(completion: { error, snapshot in
-//            guard error == nil else {
-//                print(error!.localizedDescription)
-//                return
-//            }
-//            
-//            self.contacts.removeAll()
-//            
-//            if ((snapshot?.exists()) != nil) {
-//                for child in snapshot!.children {
-//                    let childSnap = child as? DataSnapshot
-//                    let dict = childSnap?.value as? [String: String]
-//                    let id = String((child as AnyObject).key)
-//                    
-//                    var contact = ContactModel(name: "", surname: "", phone: "", id: UUID(uuidString: id) ?? UUID())
-//                    contact.name = dict?["name"] ?? ""
-//                    contact.surname = dict?["surname"] ?? ""
-//                    contact.phone = dict?["phoneNumber"] ?? ""
-//                    
-//                    self.contacts.append(contact)
-//                }
-//            }
-//            
-//            completion(self.contacts)
-//        })
     }
     
     private func saveToFirebase(_ data: [ContactModel]) {
+        
         database.child("Contact").removeValue()
         
         for contact in data {
