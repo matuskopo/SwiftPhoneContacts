@@ -11,6 +11,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var initialsLabel: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
         
     var selectedContact: ContactModel?
@@ -33,6 +34,7 @@ class DetailViewController: UIViewController {
             self?.selectedContact = returnedArray.filter({ $0.id == self?.selectedContact?.id }).first
             
             if let contactDetail = self?.selectedContact {
+                self?.initialsLabel.text = "\((contactDetail.name.prefix(1)).uppercased() + (contactDetail.surname.prefix(1)).uppercased())".trimmingCharacters(in: .whitespacesAndNewlines)
                 self?.nameLabel.text = "\(contactDetail.name) \(contactDetail.surname)".trimmingCharacters(in: .whitespacesAndNewlines)
                 self?.phoneLabel.text = String(contactDetail.phone)
             }
