@@ -325,6 +325,9 @@
                                                     </backgroundConfiguration>
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="messageContact:" destination="5qI-JH-Dd3" eventType="touchUpInside" id="k4I-ik-Pan"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkU-lh-twG" userLabel="Mobile Button">
                                                 <rect key="frame" x="91" y="0.0" width="82.5" height="48.5"/>
@@ -336,6 +339,9 @@
                                                     </backgroundConfiguration>
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="callContact:" destination="5qI-JH-Dd3" eventType="touchUpInside" id="IGd-Yq-uif"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoA-Lf-WX9" userLabel="Video Button">
                                                 <rect key="frame" x="181.5" y="0.0" width="83" height="48.5"/>
@@ -347,6 +353,9 @@
                                                     </backgroundConfiguration>
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="facetimeContact:" destination="5qI-JH-Dd3" eventType="touchUpInside" id="ich-YP-Tm7"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qg4-xz-wXU" userLabel="Mail Button">
                                                 <rect key="frame" x="272.5" y="0.0" width="82.5" height="48.5"/>
@@ -359,6 +368,9 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="mailContact:" destination="5qI-JH-Dd3" eventType="touchUpInside" id="ga1-em-jND"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -366,7 +378,7 @@
                                         <rect key="frame" x="0.0" y="228.5" width="355" height="265.5"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ZZ-qc-neY" userLabel="Delete">
-                                        <rect key="frame" x="0.0" y="494" width="355" height="132.5"/>
+                                        <rect key="frame" x="0.0" y="494" width="355" height="153"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Delejte">
                                             <backgroundConfiguration key="background">
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -376,12 +388,6 @@
                                             <action selector="deleteContact:" destination="5qI-JH-Dd3" eventType="touchUpInside" id="s5W-g3-dIO"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hax-8u-Tq9" userLabel="PhoneLbl">
-                                        <rect key="frame" x="0.0" y="626.5" width="355" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -404,7 +410,6 @@
                     <connections>
                         <outlet property="initialsLabel" destination="ZFV-Da-F6L" id="maJ-4A-7Wq"/>
                         <outlet property="nameLabel" destination="bcn-MZ-gZq" id="Mu9-5W-Xgt"/>
-                        <outlet property="phoneLabel" destination="hax-8u-Tq9" id="gbx-LG-rlm"/>
                         <outlet property="profilePicture" destination="M0r-gu-yJC" id="wyn-SL-sJ0"/>
                     </connections>
                 </viewController>

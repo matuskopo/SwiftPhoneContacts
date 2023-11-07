@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class DetailViewController: UIViewController {
 
@@ -74,6 +75,22 @@ class DetailViewController: UIViewController {
         present(alert, animated: true)
     }
     
+    @IBAction func callContact(_ sender: Any) {
+        composeURL(applicationShortcut: "tel://")
+    }
+    
+    @IBAction func messageContact(_ sender: Any) {
+        composeURL(applicationShortcut: "sms:")
+    }
+    
+    @IBAction func mailContact(_ sender: Any) {
+        composeURL(applicationShortcut: "mailto:")
+    }
+    
+    @IBAction func facetimeContact(_ sender: Any) {
+        composeURL(applicationShortcut: "facetime://")
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -83,5 +100,23 @@ class DetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Private methods
+    
+    private func composeURL(applicationShortcut: String) {
+        var urlParameter: String
+        if applicationShortcut == "mailto:" {
+            urlParameter = ""
+        } else {
+            urlParameter = selectedContact?.phone ?? ""
+        }
+        
+        guard let phoneNumber = URL(string: applicationShortcut + urlParameter) else { return }
+        if UIApplication.shared.canOpenURL(phoneNumber) {
+            UIApplication.shared.open(phoneNumber)
+        } else {
+            print("Can't open url on this device")
+        }
+    }
 
 }
