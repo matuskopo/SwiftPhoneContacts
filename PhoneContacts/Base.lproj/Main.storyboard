@@ -4,7 +4,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -242,19 +244,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dSq-Hd-Ufd" userLabel="Content Stack">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="10" y="20" width="355" height="647"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xbS-UG-GaS" userLabel="Header Stack">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="150"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GkE-K4-Cge" userLabel="Picture Stack">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="100"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zf4-i8-dlK" userLabel="Left View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="100"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="127.5" height="100"/>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M0r-gu-yJC" userLabel="Profile Picture">
-                                                        <rect key="frame" x="137.5" y="0.0" width="100" height="100"/>
+                                                        <rect key="frame" x="127.5" y="0.0" width="100" height="100"/>
                                                         <color key="backgroundColor" red="1" green="0.42038915640000002" blue="0.51019766280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="c0L-Li-bAx"/>
@@ -262,68 +264,88 @@
                                                         </constraints>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCd-JH-OB8" userLabel="Right View">
-                                                        <rect key="frame" x="237.5" y="0.0" width="137.5" height="100"/>
+                                                        <rect key="frame" x="227.5" y="0.0" width="127.5" height="100"/>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="aCd-JH-OB8" firstAttribute="width" secondItem="zf4-i8-dlK" secondAttribute="width" id="gJb-2N-4jI"/>
                                                 </constraints>
                                             </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xas-ve-0de">
+                                                <rect key="frame" x="0.0" y="100" width="355" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="xno-SV-SJh"/>
+                                                </constraints>
+                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcn-MZ-gZq" userLabel="NameLbl">
-                                                <rect key="frame" x="0.0" y="100" width="375" height="30"/>
+                                                <rect key="frame" x="0.0" y="120" width="355" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zsg-2K-flu" userLabel="Buttons Stack">
-                                        <rect key="frame" x="0.0" y="130" width="375" height="54.5"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ng-kG-ag0">
+                                        <rect key="frame" x="0.0" y="150" width="355" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="T18-zt-ziI"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zsg-2K-flu" userLabel="Buttons Stack">
+                                        <rect key="frame" x="0.0" y="180" width="355" height="48.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQ2-55-8Me">
-                                                <rect key="frame" x="0.0" y="0.0" width="94" height="54.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQ2-55-8Me" userLabel="Message Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="83" height="48.5"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="message.fill" catalog="system" title="message">
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="message">
+                                                    <imageReference key="image" image="message.fill" catalog="system" symbolScale="default"/>
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                 </buttonConfiguration>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkU-lh-twG">
-                                                <rect key="frame" x="94" y="0.0" width="93.5" height="54.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkU-lh-twG" userLabel="Mobile Button">
+                                                <rect key="frame" x="91" y="0.0" width="82.5" height="48.5"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="phone.fill" catalog="system" title="mobile">
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="mobile">
+                                                    <imageReference key="image" image="phone.fill" catalog="system" symbolScale="default"/>
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                 </buttonConfiguration>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoA-Lf-WX9">
-                                                <rect key="frame" x="187.5" y="0.0" width="94" height="54.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoA-Lf-WX9" userLabel="Video Button">
+                                                <rect key="frame" x="181.5" y="0.0" width="83" height="48.5"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="video.fill" catalog="system" title="video">
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="video">
+                                                    <imageReference key="image" image="video.fill" catalog="system" symbolScale="default"/>
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                 </buttonConfiguration>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qg4-xz-wXU" userLabel="mail">
-                                                <rect key="frame" x="281.5" y="0.0" width="93.5" height="54.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qg4-xz-wXU" userLabel="Mail Button">
+                                                <rect key="frame" x="272.5" y="0.0" width="82.5" height="48.5"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="envelope.fill" catalog="system" title="mail">
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="mail">
+                                                    <imageReference key="image" image="envelope.fill" catalog="system" symbolScale="default"/>
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </backgroundConfiguration>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                 </buttonConfiguration>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wnN-5j-4Sz" userLabel="Lower View">
-                                        <rect key="frame" x="0.0" y="184.5" width="375" height="407.5"/>
+                                        <rect key="frame" x="0.0" y="228.5" width="355" height="265.5"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ZZ-qc-neY" userLabel="Delete">
-                                        <rect key="frame" x="0.0" y="592" width="375" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="494" width="355" height="132.5"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Delejte">
                                             <backgroundConfiguration key="background">
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -334,7 +356,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hax-8u-Tq9" userLabel="PhoneLbl">
-                                        <rect key="frame" x="0.0" y="626.5" width="375" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="626.5" width="355" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -347,8 +369,8 @@
                         <constraints>
                             <constraint firstItem="qik-2U-iqU" firstAttribute="bottom" secondItem="dSq-Hd-Ufd" secondAttribute="bottom" id="1zN-08-x5x"/>
                             <constraint firstItem="dSq-Hd-Ufd" firstAttribute="top" secondItem="qik-2U-iqU" secondAttribute="top" id="Ll1-Fu-xbf"/>
-                            <constraint firstItem="qik-2U-iqU" firstAttribute="trailing" secondItem="dSq-Hd-Ufd" secondAttribute="trailing" id="ZAU-in-TQW"/>
-                            <constraint firstItem="dSq-Hd-Ufd" firstAttribute="leading" secondItem="qik-2U-iqU" secondAttribute="leading" id="qHj-DJ-6J0"/>
+                            <constraint firstItem="qik-2U-iqU" firstAttribute="trailing" secondItem="dSq-Hd-Ufd" secondAttribute="trailing" constant="10" id="ZAU-in-TQW"/>
+                            <constraint firstItem="dSq-Hd-Ufd" firstAttribute="leading" secondItem="qik-2U-iqU" secondAttribute="leading" constant="10" id="qHj-DJ-6J0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ha8-UQ-jQk">
