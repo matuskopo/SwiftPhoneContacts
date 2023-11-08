@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
         
     @IBOutlet weak var messageButton: UIButton!
     @IBOutlet weak var phoneNumberStack: UIStackView!
+    @IBOutlet weak var stackMargin: UIView!
     
     var selectedContact: ContactModel?
     let contactManager = Resources.sharedInstance.dataManager
@@ -33,6 +34,8 @@ class DetailViewController: UIViewController {
         // Stack rounding
         phoneNumberStack.layer.cornerRadius = 5
         phoneNumberStack.clipsToBounds = true
+        
+        stackMargin.widthAnchor.constraint(equalToConstant: (messageButton.layoutMargins.left * 2)).isActive = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

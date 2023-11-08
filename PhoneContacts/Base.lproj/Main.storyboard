@@ -317,6 +317,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQ2-55-8Me" userLabel="Message Button">
                                                 <rect key="frame" x="0.0" y="0.0" width="83" height="50"/>
+                                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="message">
                                                     <imageReference key="image" image="message.fill" catalog="system" symbolScale="default"/>
@@ -383,25 +384,22 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YW3-7W-1Uc" userLabel="Phone Number Stack">
                                         <rect key="frame" x="0.0" y="250" width="355" height="50"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGn-Kd-jRV" userLabel="Margin View">
-                                                <rect key="frame" x="0.0" y="0.0" width="15" height="50"/>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sGn-Kd-jRV" userLabel="Margin View">
+                                                <rect key="frame" x="0.0" y="0.0" width="20.5" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="15" id="ChP-cu-Og1"/>
-                                                </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="h1C-TC-Lfx">
-                                                <rect key="frame" x="15" y="0.0" width="41.5" height="50"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="h1C-TC-Lfx">
+                                                <rect key="frame" x="20.5" y="0.0" width="36" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mu-Uy-sra">
-                                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="36" height="20.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zC-eZ-vD1">
-                                                        <rect key="frame" x="0.0" y="20.5" width="41.5" height="29.5"/>
+                                                        <rect key="frame" x="0.0" y="20.5" width="36" height="29.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -409,7 +407,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGl-3N-JBF" userLabel="Right View">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGl-3N-JBF" userLabel="Right View">
                                                 <rect key="frame" x="56.5" y="0.0" width="298.5" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
@@ -464,8 +462,9 @@
                         <outlet property="messageButton" destination="mQ2-55-8Me" id="5s9-5J-eaI"/>
                         <outlet property="nameLabel" destination="bcn-MZ-gZq" id="Mu9-5W-Xgt"/>
                         <outlet property="phoneLabel" destination="9zC-eZ-vD1" id="rhj-Un-Yr1"/>
-                        <outlet property="phoneNumberStack" destination="YW3-7W-1Uc" id="HsD-Lb-pLP"/>
+                        <outlet property="phoneNumberStack" destination="YW3-7W-1Uc" id="zqx-8g-Ytm"/>
                         <outlet property="profilePicture" destination="M0r-gu-yJC" id="wyn-SL-sJ0"/>
+                        <outlet property="stackMargin" destination="sGn-Kd-jRV" id="WMr-DJ-npN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMi-1n-mo3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
