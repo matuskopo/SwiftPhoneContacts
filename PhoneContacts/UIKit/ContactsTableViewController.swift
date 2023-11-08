@@ -34,7 +34,7 @@ class ContactsTableViewController: UITableViewController, RefreshDelegate {
     func refreshData() {
         Resources.sharedInstance.dataManager.load(completion: { returnedArray in
             self.contacts = returnedArray
-            self.contacts.sort{$0.name < $1.name}
+            self.contacts.sort{$0.name.lowercased() < $1.name.lowercased()}
             self.tableView.reloadData()
         })
     }

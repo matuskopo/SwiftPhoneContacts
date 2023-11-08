@@ -20,6 +20,13 @@ class FirebaseContactsManager: ContactsManager {
             loadFirebase { returnedArray in
                 self.loaded = true
                 self.contacts = returnedArray
+                
+                if self.contacts.isEmpty {
+                    let testContact = ContactModel(name: "Firebase", surname: "Test", phone: "Phone")
+                    self.saveToFirebase([testContact])
+                    self.contacts.append(testContact)
+                }
+                
                 completion(self.contacts)
             }
         } else {
@@ -78,7 +85,6 @@ class FirebaseContactsManager: ContactsManager {
                     self.contacts.append(contact)
                 }
             }
-            
             completion(self.contacts)
         })
     }
