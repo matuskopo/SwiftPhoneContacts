@@ -29,6 +29,10 @@ class DetailViewController: UIViewController {
         // Picture rounding
         profilePicture.layer.cornerRadius = profilePicture.frame.size.width / 2
         profilePicture.clipsToBounds = true
+        
+        // Stack rounding
+        phoneNumberStack.layer.cornerRadius = 5
+        phoneNumberStack.clipsToBounds = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
