@@ -11,20 +11,20 @@ struct ContactListView: View {
     
     @State private var contacts: [ContactModel] = []
     
-    init(contacts: [ContactModel]) {
-        self.contacts = contacts
-    }
-    
     var body: some View {
         List(contacts) { contact in
-            VStack(alignment: .leading) {
-                Text("\(contact.name) \(contact.surname)")
-                Text(contact.phone)
-            }
-            .onAppear {
-                Resources.sharedInstance.dataManager.load { returnedArray in
-                    self.contacts = returnedArray
+            NavigationLink {
+                ContactDetailView(contact: contact)
+            } label: {
+                VStack(alignment: .leading) {
+                    Text("\(contact.name) \(contact.surname)")
+                    Text(contact.phone)
                 }
+            }
+        }
+        .onAppear {
+            Resources.sharedInstance.dataManager.load { returnedArray in
+                self.contacts = returnedArray
             }
         }
     }
@@ -32,6 +32,6 @@ struct ContactListView: View {
 
 struct ContactListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactListView(contacts: [])
+        ContactListView()
     }
 }
