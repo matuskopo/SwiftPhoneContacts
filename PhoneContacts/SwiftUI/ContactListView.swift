@@ -19,8 +19,10 @@ struct ContactListView: View {
                 VStack(alignment: .leading) {
                     Text("\(contact.name) \(contact.surname)")
                     Text(contact.phone)
+                        .font(.system(size: 12))
                 }
             }
+            .padding([.top, .bottom], -3)
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -34,6 +36,8 @@ struct ContactListView: View {
         .onAppear {
             Resources.sharedInstance.dataManager.load { returnedArray in
                 self.contacts = returnedArray
+                
+                self.contacts.sort{$0.name.lowercased() < $1.name.lowercased()}
             }
         }
     }
