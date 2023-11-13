@@ -54,15 +54,15 @@ struct AddContactView: View {
             Text("Add")
                 .frame(maxWidth: .infinity)
         }
-            .buttonStyle(.borderedProminent)
+        .buttonStyle(.borderedProminent)
         
-        ZStack{}
+        ZStack {}
             .alert(isPresented: $presentAlert1) {
                 Alert(
                     title: Text("No Name?:("),
                     dismissButton: .default(Text("OK")))
             }
-        ZStack{}
+        ZStack {}
             .alert(isPresented: $presentAlert2) {
                 Alert(
                     title: Text("No Number?:("),
