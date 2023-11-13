@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct ContactDetailView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var contact: ContactModel
+    
+    var contactManager = Resources.sharedInstance.dataManager
     
     var body: some View {
         VStack {
@@ -26,16 +30,20 @@ struct ContactDetailView: View {
                     .fontWeight(.bold)
                         
                 }
+                .padding(.bottom, 10)
                 
                 Text("\(contact.name) \(contact.surname)")
                     .font(.title)
             }
+            
             Text(contact.phone)
             
             Spacer()
             
             Button {
+                contactManager.delete(contact)
                 
+                presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("Delejte")
                     .frame(maxWidth: .infinity)
@@ -43,6 +51,15 @@ struct ContactDetailView: View {
             .buttonStyle(.borderedProminent)
             .tint(.red)
             
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+                    EditContactView(contact: contact)
+                } label: {
+                    Text("Edit")
+                }
+            }
         }
         .padding(10)
         .background(CustomColor.bg1)
