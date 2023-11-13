@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B0FF06E2B025F2000C5BF45 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FF06D2B025F2000C5BF45 /* CustomColor.swift */; };
 		6B308B722AEA628B004C366F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B308B712AEA628B004C366F /* DetailViewController.swift */; };
 		6B308B742AEA8A5D004C366F /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B308B732AEA8A5D004C366F /* AddContactViewController.swift */; };
 		6B53A3692AE8EF1400FBCEA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53A3682AE8EF1400FBCEA7 /* AppDelegate.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B0FF06D2B025F2000C5BF45 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		6B308B712AEA628B004C366F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6B308B732AEA8A5D004C366F /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		6B53A3652AE8EF1400FBCEA7 /* PhoneContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +153,7 @@
 				6B53A3762AE8EF1400FBCEA7 /* LaunchScreen.storyboard */,
 				6B53A3792AE8EF1400FBCEA7 /* Info.plist */,
 				6B53A3712AE8EF1400FBCEA7 /* PhoneContacts.xcdatamodeld */,
+				6B0FF06D2B025F2000C5BF45 /* CustomColor.swift */,
 				6B53A3922AE901C500FBCEA7 /* Resources.swift */,
 				6BEE82252AF13193009FA05C /* GoogleService-Info.plist */,
 			);
@@ -296,6 +299,7 @@
 			files = (
 				6B308B722AEA628B004C366F /* DetailViewController.swift in Sources */,
 				6B53A3912AE8FEE300FBCEA7 /* FirebaseContactsManager.swift in Sources */,
+				6B0FF06E2B025F2000C5BF45 /* CustomColor.swift in Sources */,
 				6B53A3872AE8F56C00FBCEA7 /* ContactListView.swift in Sources */,
 				6B53A36D2AE8EF1400FBCEA7 /* ViewController.swift in Sources */,
 				6B53A38B2AE8FD9200FBCEA7 /* ContactModel.swift in Sources */,
