@@ -36,7 +36,29 @@ struct ContactDetailView: View {
                     .font(.title)
             }
             
-            Text(contact.phone)
+            HStack {
+                button(action: {}, icon: "message.fill", name: "message")
+                button(action: {}, icon: "phone.fill", name: "mobile")
+                button(action: {}, icon: "video.fill", name: "video")
+                button(action: {}, icon: "envelope.fill", name: "mail")
+            }
+            .padding(.bottom, 10)
+            
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Phone")
+                        .font(.system(size: 12))
+                        .padding(.bottom, 2)
+                    Text(contact.phone)
+                        .font(.system(size: 17))
+                }
+                .padding(.leading)
+                .padding([.top, .bottom], 3)
+                
+                Spacer()
+            }
+            .background(Color(.white))
+            .clipShape(RoundedRectangle(cornerRadius: 5))
             
             Spacer()
             
@@ -63,6 +85,24 @@ struct ContactDetailView: View {
         }
         .padding(10)
         .background(CustomColor.bg1)
+    }
+    
+    @ViewBuilder
+    func button(action: @escaping (() -> ()), icon: String, name: String) -> some View {
+        Button {
+            action()
+        } label: {
+            VStack {
+                Image(systemName: icon)
+                    .padding(.bottom, -2)
+                Text(name)
+                    .frame(maxWidth: .infinity)
+                    .font(.system(size: 12))
+            }
+        }
+        .buttonStyle(.borderedProminent)
+        .tint(.white)
+        .foregroundColor(Color(uiColor: .systemBlue))
     }
 }
 
