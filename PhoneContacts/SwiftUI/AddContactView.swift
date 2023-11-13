@@ -23,14 +23,17 @@ struct AddContactView: View {
         TextField("Name", text: $name)
             .textFieldStyle(.roundedBorder)
             .padding(.bottom, -8)
+            .font(.system(size: 14))
         TextField("Surname", text: $surname)
             .textFieldStyle(.roundedBorder)
             .padding(.bottom, -8)
+            .font(.system(size: 14))
         TextField("Phone number", text: $phone)
             .textFieldStyle(.roundedBorder)
             .padding(.bottom, -8)
+            .font(.system(size: 14))
         
-        Button("Add") {
+        Button {
             guard !(name.isEmpty) else {
                 presentAlert1 = true
                 return
@@ -47,11 +50,11 @@ struct AddContactView: View {
             ))
             
             presentationMode.wrappedValue.dismiss()
+        } label: {
+            Text("Add")
+                .frame(maxWidth: .infinity)
         }
-            .padding(10)
-            .background(Color(red: 44.0, green: 122.0, blue: 255.0))
-//            .foregroundStyle(.white)
-            .clipShape(.rect)
+            .buttonStyle(.borderedProminent)
         
         ZStack{}
             .alert(isPresented: $presentAlert1) {
