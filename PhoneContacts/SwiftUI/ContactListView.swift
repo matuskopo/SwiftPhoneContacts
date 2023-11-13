@@ -22,12 +22,22 @@ struct ContactListView: View {
                 }
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+                    AddContactView()
+                } label: {
+                    Image(systemName: "plus")
+                }
+            }
+        }
         .onAppear {
             Resources.sharedInstance.dataManager.load { returnedArray in
                 self.contacts = returnedArray
             }
         }
     }
+    
 }
 
 struct ContactListView_Previews: PreviewProvider {
