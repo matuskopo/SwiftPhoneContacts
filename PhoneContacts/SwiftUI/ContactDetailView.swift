@@ -10,7 +10,7 @@ import SwiftUI
 struct ContactDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    var contact: ContactModel
+    @State var selectedContact: ContactModel
     
     var contactManager = Resources.sharedInstance.dataManager
     
@@ -22,7 +22,7 @@ struct ContactDetailView: View {
                         .fill(CustomColor.shrimp)
                         .frame(width: 100, height: 100)
                     
-                    Text("\((contact.name.prefix(1)).uppercased() + (contact.surname.prefix(1)).uppercased())"
+                    Text("\((selectedContact.name.prefix(1)).uppercased() + (selectedContact.surname.prefix(1)).uppercased())"
                         .trimmingCharacters(in: .whitespacesAndNewlines)
                     )
                     .foregroundStyle(.white)
@@ -32,7 +32,7 @@ struct ContactDetailView: View {
                 }
                 .padding(.bottom, 10)
                 
-                Text("\(contact.name) \(contact.surname)")
+                Text("\(selectedContact.name) \(selectedContact.surname)")
                     .font(.title)
             }
             
@@ -49,7 +49,7 @@ struct ContactDetailView: View {
                     Text("Phone")
                         .font(.system(size: 12))
                         .padding(.bottom, 2)
-                    Text(contact.phone)
+                    Text(selectedContact.phone)
                         .font(.system(size: 17))
                 }
                 .padding(.leading)
@@ -63,7 +63,7 @@ struct ContactDetailView: View {
             Spacer()
             
             Button {
-                contactManager.delete(contact)
+                contactManager.delete(selectedContact)
                 
                 presentationMode.wrappedValue.dismiss()
             } label: {
@@ -74,10 +74,15 @@ struct ContactDetailView: View {
             .tint(.red)
             
         }
+        .onAppear {
+            contactManager.load { returnedArray in
+                self.selectedContact = returnedArray.filter({ $0.id == self.selectedContact.id }).first ?? self.selectedContact
+            }
+        }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 NavigationLink {
-                    EditContactView(contact: contact)
+                    EditContactView(contact: selectedContact)
                 } label: {
                     Text("Edit")
                 }
@@ -107,5 +112,5 @@ struct ContactDetailView: View {
 }
 
 #Preview {
-    ContactDetailView(contact: ContactModel(name: "Jozo", surname: "Kubani", phone: "0944918762"))
+    ContactDetailView(selectedContact: ContactModel(name: "Jozo", surname: "Kubani", phone: "0944918762"))
 }

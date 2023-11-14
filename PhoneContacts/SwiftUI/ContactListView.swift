@@ -14,7 +14,7 @@ struct ContactListView: View {
     var body: some View {
         List(contacts) { contact in
             NavigationLink {
-                ContactDetailView(contact: contact)
+                ContactDetailView(selectedContact: contact)
             } label: {
                 VStack(alignment: .leading) {
                     Text("\(contact.name) \(contact.surname)")
