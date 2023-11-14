@@ -37,10 +37,10 @@ struct ContactDetailView: View {
             }
             
             HStack {
-                button(action: {}, icon: "message.fill", name: "message")
-                button(action: {}, icon: "phone.fill", name: "mobile")
-                button(action: {}, icon: "video.fill", name: "video")
-                button(action: {}, icon: "envelope.fill", name: "mail")
+                button(action: { composeURL(applicationShortcut: "sms:") }, icon: "message.fill", name: "message")
+                button(action: { composeURL(applicationShortcut: "tel://") }, icon: "phone.fill", name: "mobile")
+                button(action: { composeURL(applicationShortcut: "mailto:") }, icon: "video.fill", name: "video")
+                button(action: { composeURL(applicationShortcut: "facetime://") }, icon: "envelope.fill", name: "mail")
             }
             .padding(.bottom, 10)
             
@@ -108,6 +108,24 @@ struct ContactDetailView: View {
         .buttonStyle(.borderedProminent)
         .tint(.white)
         .foregroundColor(Color(uiColor: .systemBlue))
+    }
+    
+    // MARK: - Private methods
+    
+    private func composeURL(applicationShortcut: String) {
+        var urlParameter: String
+        if applicationShortcut == "mailto:" {
+            urlParameter = ""
+        } else {
+            urlParameter = selectedContact.phone
+        }
+        
+        guard let url = URL(string: applicationShortcut + urlParameter) else { return }
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        } else {
+            print("Can't open url on this device")
+        }
     }
 }
 
