@@ -30,14 +30,20 @@ class ViewController: UIViewController {
         
         if sgmUI.selectedSegmentIndex == 0 {
             performSegue(withIdentifier: "segueShowUIKit", sender: nil)
-        } else {
+        } else if sgmUI.selectedSegmentIndex == 1 {
             performSegue(withIdentifier: "segueShowSwiftUI", sender: nil)
+        } else {
+            performSegue(withIdentifier: "segueShowM2UI", sender: nil)
         }
     }
     
     
     @IBSegueAction func loadSwiftUIView(_ coder: NSCoder) -> UIViewController? {
         return UIHostingController(coder: coder, rootView: ContactListView())
+    }
+    
+    @IBSegueAction func loadM2UIView(_ coder: NSCoder) -> UIViewController? {
+        return UIHostingController(coder: coder, rootView: ContactListM2View())
     }
 }
 

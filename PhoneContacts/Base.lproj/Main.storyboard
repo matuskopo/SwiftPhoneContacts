@@ -50,6 +50,7 @@
                                                 <segments>
                                                     <segment title="UIKit"/>
                                                     <segment title="SwiftUI"/>
+                                                    <segment title="M2UI"/>
                                                 </segments>
                                             </segmentedControl>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8zM-FE-a9C">
@@ -92,6 +93,7 @@
                         <outlet property="sgmUI" destination="BRW-rc-dfY" id="fbW-RP-BI3"/>
                         <segue destination="G6u-h8-qtF" kind="show" identifier="segueShowUIKit" id="300-g9-EtN"/>
                         <segue destination="tPp-7J-Zyj" kind="show" identifier="segueShowSwiftUI" destinationCreationSelector="loadSwiftUIView:" id="CNi-vK-rwG"/>
+                        <segue destination="dtU-Bw-lNu" kind="show" identifier="segueShowM2UI" destinationCreationSelector="loadM2UIView:" id="jvY-b1-cdq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -106,7 +108,17 @@
                 </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kQI-72-wa1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1442" y="288"/>
+            <point key="canvasLocation" x="1441" y="0.0"/>
+        </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="5ef-F1-1bc">
+            <objects>
+                <hostingController id="dtU-Bw-lNu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="aJb-ZF-yAR"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9G0-vM-vRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1441" y="976"/>
         </scene>
         <!--Contacts Table View Controller-->
         <scene sceneID="xZf-2g-2Zu">
@@ -157,7 +169,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Le-6V-DxR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1442" y="-518"/>
+            <point key="canvasLocation" x="1441" y="-1030"/>
         </scene>
         <!--Add Contact-->
         <scene sceneID="h8w-S1-8Gq">
@@ -234,7 +246,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MLD-I5-eUG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ZUa-sW-xe6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2385" y="-1221"/>
+            <point key="canvasLocation" x="2385" y="-1733"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="jdt-mv-cEN">
@@ -471,7 +483,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMi-1n-mo3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2384.8000000000002" y="-518.59070464767615"/>
+            <point key="canvasLocation" x="2385" y="-1030"/>
         </scene>
         <!--Edit Contact Controller-->
         <scene sceneID="MUc-DB-Osw">
@@ -547,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rY1-u9-DRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3283" y="-518"/>
+            <point key="canvasLocation" x="3282" y="-1030"/>
         </scene>
     </scenes>
     <resources>
@@ -559,7 +571,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
