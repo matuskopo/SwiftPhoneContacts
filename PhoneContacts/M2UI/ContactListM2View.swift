@@ -12,12 +12,10 @@ struct ContactListM2View: View {
     
     @State private var contacts: [ContactModel] = []
     
-    let table = M2UIScreenTableModel()
-    let section = M2UIScreenTableModel.Section()
+    let cardModel = M2UIScreenCardsModel()
     
     var body: some View {
-        table
-            .addSection(section)
+        cardModel
             .build()
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -34,12 +32,15 @@ struct ContactListM2View: View {
                 
                 self.contacts.sort{$0.name.lowercased() < $1.name.lowercased()}
                 
-                table.removeAllRows()
+                cardModel.removeAllCards()
                 contacts.forEach({ contact in
-                    _ = section.addRow(
-                        M2UIScreenTableModel.Row(text: "\(contact.name) \(contact.surname)")
-                            .addDetailItem(M2UITextModel(text: contact.phone).style(.subHeadline))
-                    )
+                    let card = M2UICardModel()
+                                .header(M2UICardModel.HeaderModel()
+                                    .headline("\(contact.name) \(contact.surname)")
+                                    .subHeadline(contact.phone)
+                                    .trailingIcon(Image("trailingIcon")))
+                    
+                    _ = cardModel.addCard(card)
                 })
             }
         }
