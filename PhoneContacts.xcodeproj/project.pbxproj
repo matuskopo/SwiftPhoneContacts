@@ -30,6 +30,7 @@
 		6B53A3932AE901C500FBCEA7 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53A3922AE901C500FBCEA7 /* Resources.swift */; };
 		6B99774E2AFE4F5000508D3A /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B99774D2AFE4F5000508D3A /* ContactDetailView.swift */; };
 		6B9977582B022F0600508D3A /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9977572B022F0600508D3A /* AddContactView.swift */; };
+		6BCA54FC2B0CC4DC007C3FFB /* AddContactM2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCA54FB2B0CC4DC007C3FFB /* AddContactM2View.swift */; };
 		6BEE81E92AEBCCFC009FA05C /* EditContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE81E82AEBCCFC009FA05C /* EditContactController.swift */; };
 		6BEE81EE2AF11613009FA05C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6BEE81ED2AF11613009FA05C /* FirebaseAnalytics */; };
 		6BEE81F02AF11613009FA05C /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 6BEE81EF2AF11613009FA05C /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -86,6 +87,7 @@
 		6B53A3922AE901C500FBCEA7 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		6B99774D2AFE4F5000508D3A /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
 		6B9977572B022F0600508D3A /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
+		6BCA54FB2B0CC4DC007C3FFB /* AddContactM2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactM2View.swift; sourceTree = "<group>"; };
 		6BEE81E82AEBCCFC009FA05C /* EditContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactController.swift; sourceTree = "<group>"; };
 		6BEE82252AF13193009FA05C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				6B3E7FB22B061D3E00ACEEBB /* ContactListM2View.swift */,
+				6BCA54FB2B0CC4DC007C3FFB /* AddContactM2View.swift */,
 			);
 			path = M2UI;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				6B53A3872AE8F56C00FBCEA7 /* ContactListView.swift in Sources */,
 				6B53A36D2AE8EF1400FBCEA7 /* ViewController.swift in Sources */,
 				6B53A38B2AE8FD9200FBCEA7 /* ContactModel.swift in Sources */,
+				6BCA54FC2B0CC4DC007C3FFB /* AddContactM2View.swift in Sources */,
 				6B9977582B022F0600508D3A /* AddContactView.swift in Sources */,
 				6B53A3692AE8EF1400FBCEA7 /* AppDelegate.swift in Sources */,
 				6B53A3892AE8FD4E00FBCEA7 /* ContactsManagerProtocol.swift in Sources */,
