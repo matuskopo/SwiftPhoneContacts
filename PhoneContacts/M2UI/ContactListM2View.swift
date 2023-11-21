@@ -22,7 +22,7 @@ struct ContactListM2View: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 NavigationLink {
-                    AddContactView()
+                    AddContactM2View()
                 } label: {
                     Image(systemName: "plus")
                 }
