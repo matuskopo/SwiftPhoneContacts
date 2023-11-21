@@ -38,7 +38,10 @@ struct ContactListM2View: View {
                                 .header(M2UICardModel.HeaderModel()
                                     .headline("\(contact.name) \(contact.surname)")
                                     .subHeadline(contact.phone)
-                                    .trailingIcon(Image("trailingIcon")))
+                                    .trailingIcon(Image("trailingIcon"))
+                                    .action({ owner in
+                                        _ = ContactDetailM2View(selectedContact: contact)
+                                    }))
                     
                     _ = cardModel.addCard(card)
                 })
